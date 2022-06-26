@@ -42,6 +42,7 @@ if (screen.width >= 500) {
 			await loadExternalResource(live2d_path + 'assets/live2dcubismframework.js', 'js')
 			await loadExternalResource(live2d_path + 'loadModel.js', 'js')
 
+			// canvas
 			const live2d = {
 				baseModelPath: live2d_path + 'model/',
 				modelNames: ['xuefeng_3'],
@@ -52,6 +53,7 @@ if (screen.width >= 500) {
 				modelHight: 400,
 				scale: 26
 			}
+			// 文字气泡
 			const callback = loadTips.bind(null, {
 				cycleTime: 30 * 1000,
 				waifu_target: '.waifu-tips',
@@ -61,7 +63,7 @@ if (screen.width >= 500) {
 			new loadModel(live2d, callback)
 		})
 		.catch(() => {
-			console.log('[Error] JQuery is not defined.')
+			console.log('[Error] Something failed to download.')
 		})
 }
 
