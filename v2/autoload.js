@@ -1,4 +1,4 @@
-const live2d_path = 'https://cdn.jsdelivr.net/gh/Flysky12138/live2d/'
+const live2d_path = 'https://cdn.jsdelivr.net/gh/Flysky12138/live2d/v2/'
 
 // 封装异步加载资源的方法
 function loadExternalResource(url, type) {
@@ -22,45 +22,26 @@ function loadExternalResource(url, type) {
 
 document.body.insertAdjacentHTML(
 	'beforeend',
-	`<div id="waifu" class="waifu" style="position: fixed; left: 0">
+	`<div id="waifu" class="waifu" style="position: fixed; left: 0; bottom: 0">
 		<div class="waifu-tips"></div>
-		<canvas id="live2d" class="live2d"></canvas>
+		<canvas id="live2d" class="live2d" width="300" height="800"></canvas>
 	</div>`
 )
 
 // 加载js css
 if (screen.width >= 500) {
 	Promise.all([
-		loadExternalResource(live2d_path + 'assets/jquery.min.js', 'js'),
-		loadExternalResource(live2d_path + 'waifu/waifu-tips.js', 'js'),
-		loadExternalResource(live2d_path + 'waifu/waifu.css', 'css')
+		loadExternalResource(live2d_path + 'assets/live2d.js', 'js'),
+		loadExternalResource(live2d_path + '../waifu/waifu-tips.js', 'js'),
+		loadExternalResource(live2d_path + '../waifu/waifu.css', 'css')
 	])
-		.then(async () => {
-			await loadExternalResource(live2d_path + 'assets/pixi.min.js', 'js')
-			await loadExternalResource(live2d_path + 'assets/live2dcubismpixi.js', 'js')
-			await loadExternalResource(live2d_path + 'assets/live2dcubismcore.min.js', 'js')
-			await loadExternalResource(live2d_path + 'assets/live2dcubismframework.js', 'js')
-			await loadExternalResource(live2d_path + 'loadModel.js', 'js')
-
-			// canvas
-			const live2d = {
-				baseModelPath: live2d_path + 'model/',
-				modelNames: ['xuefeng_3'],
-				tag_target: '.waifu',
-				model_x: 40,
-				model_y: 0,
-				modelWidth: 320,
-				modelHight: 400,
-				scale: 26
-			}
-			// 文字气泡
-			const callback = loadTips.bind(null, {
+		.then(() => {
+			loadlive2d('live2d', live2d_path + 'model/l_103300401/model.json')
+			loadTips({
 				cycleTime: 30 * 1000,
 				waifu_target: '.waifu-tips',
-				waifu_tips: live2d_path + 'waifu/waifu-tips.json'
+				waifu_tips: live2d_path + '../waifu/waifu-tips.json'
 			})
-
-			new loadModel(live2d, callback)
 		})
 		.catch(() => {
 			console.log('[Error] Something failed to download.')
