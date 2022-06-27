@@ -5,12 +5,11 @@
 		{ "selector": "#to_comment", "text": ["想要去评论些什么吗？"] },
 		{ "selector": "#darkmode", "text": ["深夜时要爱护眼睛呀"] },
 		{ "selector": "#go-up", "text": ["回到开始的地方吧"] },
-		{ "selector": ".ImageBox", "text": ["点击图片可以放大呢"] },
 		{ "selector": "#search-button", "text": ["要搜索吗？"] },
 		{ "selector": "#card-info-btn", "text": ["这个我的github链接哦~？"] },
 		{ "selector": ".fas.fa-envelope", "text": ["这个我的e-mail哦~？"] },
 		{
-			"selector": ".waifu",
+			"selector": "#waifu",
 			"text": [
 				"鼠…鼠标放错地方了！",
 				"110吗，这里有个变态一直在摸我(ó﹏ò｡)",
@@ -30,7 +29,7 @@
 	"click": [
 		{ "selector": ".gt-header-comment", "text": ["要吐槽些什么呢"] },
 		{
-			"selector": ".waifu",
+			"selector": "#waifu",
 			"text": [
 				"是…是不小心碰到了吧",
 				"萝莉控是什么呀",
