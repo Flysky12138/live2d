@@ -1,4 +1,4 @@
-const live2d_path = 'https://cdn.jsdelivr.net/gh/Flysky12138/live2d/v2/'
+const live2d_path = 'https://cdn.jsdelivr.net/gh/Flysky12138/live2d@latest/v2/'
 
 // 封装异步加载资源的方法
 function loadExternalResource(url, type) {
@@ -24,13 +24,14 @@ document.body.insertAdjacentHTML(
 	'beforeend',
 	`<div id="waifu" class="waifu" style="position: fixed; left: 0; bottom: 0">
 		<div class="waifu-tips"></div>
-		<canvas id="live2d" class="live2d" width="300" height="800"></canvas>
+		<canvas id="live2d" class="live2d" height="800" style="height: 600px"></canvas>
 	</div>`
 )
 
 // 加载js css
 if (screen.width >= 500) {
 	Promise.all([
+		loadExternalResource('https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js', 'js'),
 		loadExternalResource(live2d_path + 'assets/live2d.js', 'js'),
 		loadExternalResource(live2d_path + '../waifu/waifu-tips.js', 'js'),
 		loadExternalResource(live2d_path + '../waifu/waifu.css', 'css')
