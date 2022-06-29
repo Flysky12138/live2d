@@ -22,7 +22,7 @@ function loadExternalResource(url, type) {
 
 document.body.insertAdjacentHTML(
 	'beforeend',
-	`<div id="waifu" style="left: 0">
+	`<div id="waifu" style="display: none">
 		<div class="waifu-tips"></div>
 		<canvas id="live2d" height="800" style="height: 600px;margin: -55px 0;"></canvas>
 	</div>`
@@ -43,6 +43,7 @@ if (screen.width >= 500) {
 				waifu_target: '.waifu-tips',
 				waifu_tips: live2d_path + '../waifu/waifu-tips.json'
 			})
+			document.getElementById('waifu').style = 'left: 0'
 		})
 		.catch(() => {
 			console.log('[Error] Something failed to download.')
