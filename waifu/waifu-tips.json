@@ -1,13 +1,10 @@
 {
 	"mouseover": [
 		{ "selector": ".article-title", "text": ["要看看 <span style=\"color:#0099cc;\">{text}</span> 么？"] },
-		{ "selector": "#chat_btn", "text": ["一言一语，一颦一笑。一字一句，一颗赛艇。"] },
 		{ "selector": "#to_comment", "text": ["想要去评论些什么吗？"] },
 		{ "selector": "#darkmode", "text": ["深夜时要爱护眼睛呀"] },
 		{ "selector": "#go-up", "text": ["回到开始的地方吧"] },
 		{ "selector": "#search-button", "text": ["要搜索吗？"] },
-		{ "selector": "#card-info-btn", "text": ["这个我的github链接哦~？"] },
-		{ "selector": ".fas.fa-envelope", "text": ["这个我的e-mail哦~？"] },
 		{
 			"selector": "#waifu",
 			"text": [

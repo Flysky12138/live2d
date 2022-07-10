@@ -37,6 +37,7 @@
 	animation-iteration-count: infinite;
 	animation-name: shake;
 	animation-timing-function: ease-in-out;
+	pointer-events: none;
 }
 
 @keyframes shake {
@@ -172,7 +173,6 @@
 	88% {
 		transform: translate(-1.5px, 0.5px) rotate(1.5deg);
 	}
-
 	90% {
 		transform: translate(-1.5px, -0.5px) rotate(-0.5deg);
 	}
